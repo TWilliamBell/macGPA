@@ -16,6 +16,6 @@
 
 
 convertTwelveToFourPoint <- function(gradeVector) {
-  saveOrder <- Matrix::invPerm(order(gradeVector, decreasing = T))
+  saveOrder <- order(order(gradeVector, decreasing = T))
   dplyr::inner_join(macGPA::gpatable[ , c(2, 4)], data.frame("Points" = gradeVector), by = "Points")$X4.0.Scale[saveOrder]
 }
